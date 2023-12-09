@@ -1,11 +1,18 @@
 package com.rentacar.rentACarProject.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "cars")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Car {
     @Id
     @Column(name = "id")
@@ -22,7 +29,9 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "model_id")
     private Model model;
+
     @OneToMany(mappedBy = "payment")
+    @JsonIgnore
     private List<Payment> payments;
 
 

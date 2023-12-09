@@ -1,9 +1,16 @@
 package com.rentacar.rentACarProject.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "users")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class User {
     @Id
     @Column(name = "id")
@@ -20,10 +27,13 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "customer")
+    @JsonIgnore
+
     private Customer customer;
 
     @ManyToOne
     @JoinColumn(name = "employee")
+    @JsonIgnore
     private Employee employee;
 
 }
