@@ -20,7 +20,6 @@ public class Employee {
     private int id;
     @Column(name = "salary")
     private String salary;
-
     @OneToMany(mappedBy = "employee")
     @JsonIgnore
     private List<User> users;

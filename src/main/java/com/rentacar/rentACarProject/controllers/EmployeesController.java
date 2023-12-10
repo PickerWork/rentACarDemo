@@ -23,7 +23,7 @@ public class EmployeesController {
     }
     @PostMapping
     public void add(@RequestBody Employee employee){
-        employeeRepository.save(employee);
+        //employeeRepository.save(employee);
     }
     @PutMapping
     public void update(@RequestBody Employee employee){}
