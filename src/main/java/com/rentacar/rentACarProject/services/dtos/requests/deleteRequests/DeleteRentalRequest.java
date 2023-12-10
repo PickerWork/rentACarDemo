@@ -1,4 +1,12 @@
 package com.rentacar.rentACarProject.services.dtos.requests.deleteRequests;
 
-public class DeleteRentalRequest {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class DeleteRentalRequest {private int id;
+
 }
